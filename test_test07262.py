@@ -13,7 +13,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class TestTest07262():
   def setUp(self):
-    self.driver = webdriver.Firefox()
+    self.driver = webdriver.Chrome()
     self.vars = {}
   
   def tearDown(self):
@@ -24,7 +24,7 @@ class TestTest07262():
     self.driver.set_window_size(888, 693)
     self.driver.find_element(By.ID, "kw").send_keys("jay")
     self.driver.find_element(By.ID, "kw").send_keys(Keys.ENTER)
-	#time.sleep(6)
+	time.sleep(6)
 if __name__=="__main__":
 	unittest.main()
   
