@@ -8,9 +8,8 @@ driver.find_element_by_id("kw").send_keys("吴世勋")
 driver.find_element_by_id("su").click()
 
 driver.implicitly_wait(30)
-#放大窗口
-#driver.maximize_window()
-#time.sleep(3)
+driver.set_window_size(400, 300)
+driver.implicitly_wait(10)
 
 #1.浏览器的后退
 driver.back()
@@ -27,11 +26,15 @@ js = "var q=document.documentElement.scrollTop=0"
 driver.execute_script(js)
 time.sleep(6)
 #5.将滚动条拖到最右端
-js= "var q=document.documentElement.scrollLeft=10000"
+js = "var q=document.documentElement.scrollLeft=10000"
 driver.execute_script(js)
 time.sleep(6)
 #6.将滚动条拖到最左端
-js= "var q=document.documentElement.scrollLeft=0"
+js = "var q=document.documentElement.scrollLeft=0"
 driver.execute_script(js)
 time.sleep(6)
+#7.同时控制浏览器滚动条左右 上下滑动
+js = "window.scrollTo(200,100)"
+driver.execute_script(js)
+time.sleep(3)
 driver.quit()
